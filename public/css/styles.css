@@ -1,0 +1,36 @@
+body {
+  background-image: url(https://ec.europa.eu/programmes/creative-europe/sites/default/files/covid19-cdc-unsplash.jpg);
+  background-position: left;
+  background-attachment: fixed;
+  margin: 0;
+}
+
+button {
+  width: 100px;
+}
+
+.heading {
+  color: #fff;
+  background-color: rgb(71, 71, 71);
+  text-align: center;
+  height: 100px;
+  padding-top: 8px;
+  text-transform: uppercase;
+}
+
+.container {
+  margin: 50px auto;
+}
+
+.formInput {
+  margin: 30px auto;
+  max-width: 600px;
+}
+
+.display {
+  padding: 23px;
+  background-color: rgba(105, 104, 104, 0.9);
+  color: #fff;
+  text-align: center;
+  border-radius: 8px;
+}

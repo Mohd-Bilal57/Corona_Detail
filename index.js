@@ -5,6 +5,7 @@ const app = express()
 require('dotenv').config();
 
 app.use(bodyParser.urlencoded({extended:true}));
+app.use(express.static(__dirname + "/public"));
 app.set("view engine", 'ejs');
 
 app.get("/",function(req, res){
@@ -13,21 +14,22 @@ app.get("/",function(req, res){
 
 app.post("/", function(req, res){
 	const country = req.body.country;
-	const api_key = process.env.API_KEY;
+	const api_key = process.env.API_KEY;       
 
+	/////from rapid api snippet////
     const options = {
-	"method": "GET",
-	"hostname": "covid-19-data.p.rapidapi.com",
-	"port": null,
-	"path": "/country?name=" + country,
-	"headers": {
-		"x-rapidapi-key": api_key,
-		"x-rapidapi-host": "covid-19-data.p.rapidapi.com",
-		"useQueryString": true
-	}
-};
+		"method": "GET",
+		"hostname": "covid-19-data.p.rapidapi.com",
+		"port": null,
+		"path": "/country?name=" + country,
+		"headers": {
+			"x-rapidapi-key": api_key,
+			"x-rapidapi-host": "covid-19-data.p.rapidapi.com",
+			"useQueryString": true
+		}
+	};	
 
-const request = http.request(options, function (response) {
+	const request = http.request(options, function (response) {
 	const chunks = [];
 
 	response.on("data", function (chunk) {
@@ -49,7 +51,7 @@ const request = http.request(options, function (response) {
 });
 
 request.end();
-
+///////till here rapid snipet///
 })
 
 

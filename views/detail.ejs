@@ -1,9 +1,26 @@
 <%- include("partials/header.ejs"); -%>
 
-<h1><%= country %></h1>
-<h1><%= cases %></h1>
-<h1><%= recovered %></h1>
-<h1><%= critical %></h1>
-<h1><%= deaths %></h1>
+
+<div class="heading">
+    <h1 class="display-1"><%= country %></h1>
+</div>
+
+<div class="container">
+
+    <div class="display">
+        <h2>Case: <%= cases %></h2>
+        <h2>Recovered: <%= recovered %></h2>
+        <h2>Critical case: <%= critical %></h2>
+        <h2>Deaths: <%= deaths %></h2>
+    </div>
+    
+</div>
+   
+
+
+    
+
+
+
 
 <%- include("partials/footer.ejs"); -%>

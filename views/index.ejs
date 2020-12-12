@@ -1,8 +1,27 @@
 <%- include("partials/header.ejs"); -%>
 
+<div class="heading">
+    <h1 class="display-1">Corona <small class="text-muted">Report</small></h1>
+</div>
+
+<div class="container">
+
     <form action="/" method="post">
-    <input type="text" name="country">
-    <button type="submit">Search</button>
+
+        <div class="display">
+            <label for="country" class="form-label">
+                <h2 class="display-2">Enter the country to search</h2>
+            </label>
+            <div class="formInput">
+                <input type="text" class="form-control" id="country" class="inputField" name="country" placeholder=" Country "
+                required>
+            </div>
+            <hr>
+            <button type="submit" class="btn btn-danger">Search</button>
+        </div>
+        
     </form>
+</div>
+
 
 <%- include("partials/footer.ejs"); -%>
